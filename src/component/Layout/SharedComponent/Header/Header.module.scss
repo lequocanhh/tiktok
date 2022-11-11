@@ -1,0 +1,117 @@
+.wrapper {
+  --height-search: 46px;
+  --header-border-radius: 92px;
+  --width-search-btn: 52px;
+  width: 100%;
+  height: var(--default-layout-header-height, 60px);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  height: 100%;
+  width: var(--default-layout-width, 1150px);
+  padding: 0 var(--layout-horizon-space);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+}
+
+.search,
+.search-result {
+  width: 361px;
+}
+
+.search {
+  position: relative;
+  width: 361px;
+  height: var(--height-search);
+  padding-left: 16px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: var(--header-border-radius);
+  display: flex;
+  border: 1.5px solid transparent;
+
+  input {
+    flex: 1;
+    height: calc(100% + 3px);
+    color: var(--black);
+    font-size: 1.6rem;
+    outline: none;
+    background-color: transparent;
+    caret-color: var(--primary);
+  }
+
+  input:not(:placeholder-shown) ~ .search-btn {
+    color: rgba(22, 24, 35, 0.75);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    width: 1px;
+    height: calc(var(--height-search) - 18px);
+    right: var(--width-search-btn);
+    background-color: rgba(22, 24, 35, 0.12);
+  }
+
+  &:focus-within {
+    border: 1.5px solid rgba(22, 24, 35, 0.2);
+  }
+}
+
+//action
+
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.action-btn {
+  font-size: 2.2rem;
+  background-color: transparent;
+  color: #161823;
+}
+
+.search-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: rgba(22, 24, 35, 0.5);
+  padding: 5px 12px;
+}
+
+.clear-icon,
+.loading-icon {
+  position: absolute;
+  color: rgba(22, 24, 35, 0.34);
+  right: calc(var(--width-search-btn) + 15px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search-btn {
+  width: var(--width-search-btn);
+  height: 100%;
+  border-top-right-radius: var(--header-border-radius);
+  border-bottom-right-radius: var(--header-border-radius);
+  font-size: 1.8rem;
+  color: rgba(22, 24, 35, 0.34);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+.more-btn {
+  font-size: 2rem;
+  margin-left: 16px;
+  padding: 0 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
