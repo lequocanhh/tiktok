@@ -25,6 +25,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  font-weight: 600;
 }
 
 .icon {
@@ -37,7 +38,7 @@
 //button types
 
 .primary {
-  color: var(--white);
+  color: var(--white) !important;
   background-color: var(--primary);
 
   &:hover {
